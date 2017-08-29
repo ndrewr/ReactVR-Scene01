@@ -46,12 +46,19 @@ export default class app extends React.Component {
             color: 'lightblue',
             backgroundColor: '#335',
             fontSize: 0.1,
-            fontWeight: 300,
+            fontWeight: '300',
             width: 0.45, // width/height values represent meters
             height: 0.45,
             textAlign: 'center',
             textAlignVertical: 'center',
             layoutOrigin: [.5, .5] // values represents percentages
+          }}
+          onEnter={() => console.log('entered Text field.')}
+          onExit={() => console.log('Exited Text field.')}
+          onMove={(event) => console.log('Moving within the Text field...', event.nativeEvent)}
+          onInput={(event) => {
+            console.log('Input event! Type is...', event.nativeEvent.inputEvent.type)
+            console.log('Input event! EventType is...', event.nativeEvent.inputEvent.eventType)
           }}
         >
           Hello, friend.
