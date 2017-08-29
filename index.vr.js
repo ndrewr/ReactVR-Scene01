@@ -5,6 +5,7 @@ import {
   Pano,
   Text,
   View,
+  VrButton,
 } from 'react-vr';
 
 const imageurl = asset('harrisburg.jpg')
@@ -63,6 +64,22 @@ export default class app extends React.Component {
         >
           Hello, friend.
         </Text>
+        <VrButton
+          // disabled // if true, no events will fire
+          style={{
+            layoutOrigin: [.15, .45],
+            transform: [{ translate: [0, 0, -1]}]
+          }}
+          onClick={() => console.log('Clicked!')}
+          onLongClick={() => console.log('Loooong Clicked!')} // default 2 sec?
+          onButtonPress={() => console.log('Button was pressed!')}
+          onButtonRelease={() => console.log('Button Released!')}
+          longClickDelayMS={4000} // optional
+        >
+          <Text>
+            click?
+          </Text>
+        </VrButton>
       </View>
     );
   }
